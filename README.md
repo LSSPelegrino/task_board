@@ -1,5 +1,3 @@
-Soon to be a proper readme file
-
 # Task board
 ### A simple task board, made using Flask 
 
