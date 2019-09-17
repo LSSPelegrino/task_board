@@ -14,7 +14,7 @@ Navigate to the created folder and create a virtual environment. I recommend [vi
 
 With a virtual enviroment activated, install the requirements running the following command at the project's root:
 ```bash
-(venv) $ pip install requirements.txt 
+(venv) $ pip install -r requirements.txt 
 ```
 After the installation is complete, run:
 ```bash 
