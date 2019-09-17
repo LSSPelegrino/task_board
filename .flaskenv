@@ -1,2 +1,3 @@
 FLASK_APP=task_board.py
+FLASK_ENV=development
 FLASK_DEBUG=0

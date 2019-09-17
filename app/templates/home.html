@@ -1,8 +1,38 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <title>Task Board - Home</title>
         </head>
     <body>
-        <h1>Home is where the heart is</h1>
+        Home is where the heart is
+        <h1>Task Board</h1>
+        {% for task in tasks %}
+        <table>
+            <tr>
+                <th>Task {{ task.task_id }}</th>
+            </tr>
+            <tr>
+                <td>Title:</td>
+                <td>{{ task.title }}</td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td> {{ task.description }} </td>
+            </tr>
+            <tr>
+                <td>Deadline:</td>
+                <td> {{ task.deadline }} </td>
+            </tr>
+            <tr>
+                <td>Done:</td>
+                <td>{{ task.done }}</td>
+            </tr>
+            <tr>
+                <td>Completed at:</td>
+                <td>{{ task.completed_at }}</td>
+            </tr>
+        </table>
+        <br>
+        {% endfor %}
     </body>
 </html>
