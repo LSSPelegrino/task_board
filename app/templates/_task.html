@@ -1,0 +1,28 @@
+<table>
+    <tr>
+        <td><b>Title:</b></td>
+        <td><b>{{ task.title }}</b></td>
+    </tr>
+    <tr>
+        <td>Description:</td>
+        <td>{{ task.description }}</td>
+    </tr>
+    <tr>
+        <td>Deadline:</td>
+        <td>{{ task.deadline }}</td>
+        <td>
+            <form action="" method="POST" novalidate>
+                {{ toggle_form.csrf_token() }}
+                {{ toggle_form.task_id(value=task.task_id) }}
+                {{ toggle_form.button() }}
+            </form>
+        </td>
+    </tr>
+    {% if task.done %}
+        <tr>
+                <td>Completed at:</td>
+                <td>{{ task.completed_at }}</td>
+        </tr>
+    {% endif %}
+</table>
+<br>

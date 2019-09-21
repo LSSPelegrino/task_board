@@ -1,3 +1,4 @@
 FLASK_APP=task_board.py
 FLASK_ENV=development
-FLASK_DEBUG=0
+FLASK_DEBUG=1
+SECRET_KEY=your_password_here

@@ -5,6 +5,9 @@ Implement database models
 # # Standard Modules
 from datetime import datetime, timezone
 
+# # 3rd Party Modules
+from dateutil import parser
+
 # # Internal Modules
 from app import db
 # from app.api import api
@@ -81,8 +84,7 @@ class Task(PaginatedAPIMixin, db.Model):
         if 'description' in data:
             self.description = data['description']
         if 'deadline' in data:
-            self.deadline = datetime.fromisoformat(
-                data['deadline']).astimezone(tz=timezone.utc)
+            self.deadline = parser.parse(data['deadline'])
         return
 
 

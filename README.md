@@ -14,7 +14,7 @@ Navigate to the created folder and create a virtual environment. I recommend [vi
 
 With a virtual enviroment activated, install the requirements running the following command at the project's root:
 ```bash
-(venv) $ pip install requirements.txt 
+(venv) $ pip install -r requirements.txt 
 ```
 After the installation is complete, run:
 ```bash 
@@ -25,7 +25,7 @@ The development server should be running on [localhost](127.0.0.1:5000).
 The database runs on SQLite and the repository ships with an example database.
 
 ## API
-The current version does not have a front end, but it's possible to test the API requests. 
+It's possible to test the API requests. 
 
 The following actions are allowed:
 
@@ -173,7 +173,7 @@ Server: Werkzeug/0.15.6 Python/3.7.4
 
 ## To do list
 
-* Build a simple front end
+* ~~Build a simple front end~~ 
 * Add unit tests
 * Implement API authenticators 
 * Migrate to a better database software, possibly PostgreSQL

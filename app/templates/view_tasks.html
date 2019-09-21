@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+        <table>
+            <tr>
+                <th>Not Done</th>
+                <th><br></th>
+                <th>Done</th>
+            </tr>
+            <tr>
+                <td>
+                    {% for task in tasks %}
+                        {% if not task.done %}
+                            {% include '_task.html' %}
+                        {% endif %}
+                    {% endfor %}
+                </td>
+                <td></td>
+                <td>
+                    {% for task in tasks %}
+                        {% if task.done %}
+                            {% include '_task.html' %}
+                        {% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
+        </table>   
+    </div>
+{% endblock %}
