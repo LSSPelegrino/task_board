@@ -4,6 +4,7 @@ Implement API calls with tasks
 
 # # Standard Modules
 import re
+import time
 
 # # 3rd Party Modules
 from flask import request, jsonify
@@ -87,8 +88,8 @@ class ApiTask(Resource):
         """
         page = request.args.get('page', 1, type=int)
         per_page = min(request.args.get('per_page', 10, type=int), 100)
-        print(per_page, page)
         data = Task.to_collection_dict(Task.query, page, per_page)
+        end = time.time()
         return data
 
 

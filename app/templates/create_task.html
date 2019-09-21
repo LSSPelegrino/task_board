@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+        <form action="" method="POST" novalidate>
+            {{ create_form.hidden_tag() }}
+            <table>
+                <tr>
+                    <td>{{ create_form.title.label }}:</td>
+                    <td>{{ create_form.title(size=32) }}</td>
+                </tr>
+                <tr>
+                    <td>{{ create_form.description.label }}:</td>
+                    <td>{{ create_form.description(cols=32, rows=5) }}</td>
+                </tr>
+                <tr>
+                    <td>{{ create_form.deadline.label }}:</td>
+                    <td>{{ create_form.deadline(size=12) }}</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td>{{ create_form.submit() }}</td>
+                </tr>
+            <table>
+        </form>
+    </div>
+{% endblock %}
