@@ -89,7 +89,6 @@ class ApiTask(Resource):
         page = request.args.get('page', 1, type=int)
         per_page = min(request.args.get('per_page', 10, type=int), 100)
         data = Task.to_collection_dict(Task.query, page, per_page)
-        end = time.time()
         return data
 
 

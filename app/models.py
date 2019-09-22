@@ -3,7 +3,8 @@ Implement database models
 """
 
 # # Standard Modules
-from datetime import datetime, timezone
+from datetime import datetime
+from datetime import timezone
 
 # # 3rd Party Modules
 from dateutil import parser
