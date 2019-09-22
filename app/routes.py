@@ -35,14 +35,15 @@ def view_tasks():
     toggle_form = ToggleDoneForm()
     if toggle_form.validate_on_submit():
         requests.put(
-            f"http://localhost:5000/api/tasks/{toggle_form.task_id.data}/toggle_done")
+            f"http://127.0.0.1:5000/api/tasks/{toggle_form.task_id.data}/toggle_done",
+            headers={'Connection': 'close'})
         return redirect(url_for('view_tasks'))
 
     page = 1
     per_page = 100
-    # THIS LINE TAKES A LOT OF TIME
     response = requests.get(
-        f"http://localhost:5000/api/tasks?page={page}&per_page={per_page}")
+        f"http://127.0.0.1:5000/api/tasks?page={page}&per_page={per_page}",
+        headers={'Connection': 'close'})
     tasks = response.json()["items"]
     for task in tasks:
         task['deadline'] = parser.parse(task['deadline'])
@@ -64,18 +65,17 @@ def post_task():
     if create_form.validate_on_submit():
         data = {
             "title": create_form.title.data,
-            "deadline": create_form.deadline.data
+            "deadline": create_form.deadline.data.isoformat(
+                timespec='milliseconds')
         }
         data.update({
             "description": create_form.description.data
             }) if create_form.description.data else None
         print(data)
-        response = requests.post("http://localhost:5000/api/tasks",
+        response = requests.post("http://127.0.0.1:5000/api/tasks",
                                  json=data)
         print(response.json())
         return redirect(url_for('view_tasks'))
     return render_template('create_task.html',
                            title='Post Task',
                            create_form=create_form)
-
-

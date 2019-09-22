@@ -6,11 +6,12 @@ Implement Form classes
 from flask_wtf import FlaskForm
 from wtforms import StringField
 from wtforms import TextAreaField
-from wtforms import DateTimeField
+# from wtforms import DateTimeField
 from wtforms import HiddenField
 from wtforms import SubmitField
 from wtforms.validators import DataRequired
 from wtforms.validators import Length
+from wtforms.fields.html5 import DateTimeLocalField
 
 
 class CreateTaskForm(FlaskForm):
